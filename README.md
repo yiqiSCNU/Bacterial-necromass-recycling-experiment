@@ -23,6 +23,6 @@ R scripts are organized into four directories:
 - Raw sequences of 16S rRNA gene data: NCBI SRA BioProject `PRJNA1283958`  
 
 
-## ?? Contact  
+## Contact  
 For questions or issues:  
 - Email: [yiqihao@m.scnu.edu.cn](mailto:yiqihao@m.scnu.edu.cn)  
