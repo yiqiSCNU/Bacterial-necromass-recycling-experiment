@@ -14,6 +14,7 @@ To identify metabolites consumed by at least one bacterial species, the abundanc
 
 
 2. Kruskal-Wallis Tests
+   
   A. Necromass Composition Analysis
      Identified significant abundance differences across 12 single-species necromass preparations (FDR < 0.05).
 
