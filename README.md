@@ -1,28 +1,37 @@
-# Bacterial-necromass-recycling-experiment
-Code repository: Bacterial necromass recycling promotes diversity maintenance in bacterial communities via resource partitioning
+Necromass Metabolite Profiling: Composition and Bacterial Utilization
 
-This repository contains R script used to analyze data in the manuscript:  
-"Bacterial necromass recycling promotes diversity maintenance in bacterial communities via resource partitioning" (Manuscript in preperation)  
+This repository contains: 
+metabolite abundance table recording normalized levels of 865 annotated metabolites across:
+    Necromass composition profiling (60 samples)
+    Necromass utilization profiling (65 samples)
+Associated metadata for samples and metabolites
 
+Analytical Workflow
 
-R scripts are organized into four directories:  
+1. Differential Abundance Analysis
 
-### 1. Necromass Combination Experiment  
-- **Description**: Alpha and beta diversity analyses of bacterial communities in the necromass combination experiment.  
-
-
-### 2. Assembly Rule Analyses  
-- **Description**: Null model testing of assembly rules for common/rare taxa across seven thresholds and comparisions with 999 permutations.  
-
-### 3. Species-Rich Necromass Experiment  
-- **Description**: Alpha and Beta diversity patterns in species-rich necromass experiment.  
-
-### 4. Metabolomic Data Analyses  
-- **Description**: Metabolomic profiling for (1)12 single species necromass midum (2) mixed medium of 12 species necromass (3) spent medium of each of the 12 species culturing in mixed medium.  
-
-- Raw sequences of 16S rRNA gene data: NCBI SRA BioProject `PRJNA1283958`  
+To identify metabolites consumed by at least one bacterial species, the abundance of metabolites in each post-consumption necromass (spent culture) were compared with that in the twelve-species necromass. The criteria used to identify consumed metabolites were as follows: (a) FDR-adjusted p < 0.05 in the two-sample t-test, (b) variable importance in projection (VIP) score > 1.0 in orthogonal projections to latent structures-discriminant analysis (OPLS-DA), and (c) significantly lower abundance in post-consumption necromass than in the twelve-species necromass. These consumed metabolites were further subjected to K-W tests (FDR < 0.05) to examine species-specific necromass consumption. 
 
 
-## ?? Contact  
-For questions or issues:  
-- Email: [yiqihao@m.scnu.edu.cn](mailto:yiqihao@m.scnu.edu.cn)  
+Output Columns:
+
+Metabolite ID
+Mean abundance (control group - fresh necromass)
+Mean abundance (treatment group - spent necromass)
+VIP score (OPLS-DA)
+t-test p-value
+FDR-adjusted p-value
+Fold Change (treatment/control)
+log10-transformed Fold Change
+
+
+2. Kruskal-Wallis Tests
+  A. Necromass Composition Analysis
+     Identified significant abundance differences across 12 single-species necromass preparations (FDR < 0.05).
+
+  B. Necromass Depletion Analysis
+    Assessed interspecific variation in metabolite consumption patterns, restricted to metabolites passing the differential abundance filters above.
+
+Implementation
+All analyses were performed using R scripts included in this repository.
+   
