@@ -1,0 +1,30 @@
+This code package contains code and results for assembly rules analyses, 
+examining two components:
+
+(1) Trends in the number of lost/preserved/emergent species along NPS gradient
+(2) Declining trends in average niche breadth/overlap along NPS gradient
+
+For each analysis, firstly read in the observed data (data were provided), 
+then implemented null model analyses with treatment-level permutations 
+(swapping treatment labels while preserving non-random species abundance distribution across treatments).
+
+Output structure for each analysis contains 1,000 rows per threshold
+
+Row 1: Calculated metrics for observed data at the corresponding threshold,
+Rows 2–1000: Results from 999 randomized permutation null models.
+
+
+Above analyses are performed on 
+
+(i)  The full dataset
+(ii) Data partitioned by a common/rare species, across seven thresholds
+
+      threshold1: 1%
+      threshold2: 0.5%
+      threshold3: 0.2%
+      threshold4: 0.1%
+      threshold5: 0.05%
+      threshold6: 0.02%
+      threshold7: 0.01%
+
+Note: This repository contains representative code, data, and results for threshold 4 (0.1%) as an illustrative example.
